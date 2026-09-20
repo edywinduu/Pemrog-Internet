@@ -26,11 +26,12 @@
         section img:hover {
             width: 230px;
             height: 230px;
-        } 
+            box-shadow: 0px 30px 100px 20px rgba(34, 100, 255, 0.30);
+        }
         section table {
-            width: 300px;
-            min-height: 169px;
-            padding: 16px 24px;
+            width: 400px;
+            min-height: 40px;
+            padding: 4px 16px;
         }
         section table thead tr td{
             text-align: center;
@@ -49,16 +50,38 @@
         }
         .information-socialmedia {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            
+            grid-template-columns: 140px 140px; 
+            column-gap: 24px;        /* Jarak celah di tengah */
+            row-gap: 14px;           /* Jarak baris atas-bawah */
+            justify-content: center; /* Posisikan grid tepat di tengah kartu */
+            width: 100%;
         }
+
         .information-socialmedia a {
-            width: 11vh;
-            padding: 8px 16px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .information-socialmedia a i {
+            width: 28px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .information-socialmedia > :nth-child(odd) {
+            justify-content: flex-end;
+        }
+
+        .information-socialmedia > :nth-child(odd) span {
+            width: 85px;       /* Sesuaikan agar pas dengan kata Whatsapp */
+            text-align: left;  /* Huruf 'E' pada Email tetap lurus di bawah huruf 'W' */
+        }
+
+        .information-socialmedia > :nth-child(even) {
+            justify-content: flex-start;
         }
     </style>
 </head>
@@ -86,22 +109,22 @@
         </table>
         <div class="information-socialmedia">
             <!-- WhatsApp -->
-            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" style="color: rgb(0, 162, 0)">
                 <i class="fa fa-whatsapp" style="font-size: 32px;"></i>
                 <span style="font-size: 20px;">Whatsapp</span>
             </a>
             <!-- GitHub -->
-            <a href="https://github.com/edywinduu" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/edywinduu" target="_blank" rel="noopener noreferrer" style="color: black">
                 <i class="fa fa-github" aria-hidden="true" style="font-size: 32px;"></i>
                 <span style="font-size: 20px;">Github</span>
             </a>
             <!-- Email -->
-            <a href="mailto:edywindu7@gmail.com">
+            <a href="mailto:edywindu7@gmail.com"  style="color: rgb(197, 129, 2)">
                 <i class="fa fa-envelope" aria-hidden="true" style="font-size: 28px;"></i>
                 <span style="font-size: 20px;">Email</span>
             </a>
             <!-- Instagram -->
-            <a href="https://instagram.com/edywinduu" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/edywinduu" target="_blank" rel="noopener noreferrer" style="color: rgb(229,105,105)">
                 <i class="fa fa-instagram" aria-hidden="true" style="font-size: 28px;"></i>
                 <span style="font-size: 20px;">Instagram</span>
             </a>

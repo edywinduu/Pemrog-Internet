@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Contact</title>
+    <style>
+        body {
+            padding: 18px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        body>a {
+            align-self: flex-start;
+        }
+
+        a {
+            font-size: 20px;
+            padding-bottom: 16px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            width: fit-content;
+            height: 100%;
+            padding: 8px 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            color: black;
+        }
+
+        body>span {
+            font-size: 40px;
+            align-self: center;
+            font-weight: 600;
+        }
+
+        form {
+            display: inline-flex;
+            flex-direction: column;
+            align-self: center;
+            padding: 2rem 4rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            height: 100%;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            gap: 16px;
+            text-decoration: none;
+            color: black;
+        }
+
+        label {
+            width: 30vh;
+            font-size: 20px;
+        }
+
+        input[type="submit"] {
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        <span>Back</span>
+    </a>
+    <span>Describe Yourself!</span>
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="" placeholder="edy...">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="" placeholder="example@gmail.com">
+        <label for="passwd">Password</label>
+        <input type="password" name="passwd" id="" placeholder="***">
+        <label for="career-goals">Carrer Goals</label>
+        <datalist id="career-goals">
+        <option value="Software Engineer">
+        <option value="Data Scientist">
+        <option value="Network Architect">
+        <option value="Game Developer">
+        <option value="Cybersecurity Analyst">
+        <option value="Aerospace Engineer">
+        <option value="Doctor">
+        <option value="Graphic Designer">
+        <option value="Financial Analyst">
+        <option value="Entrepreneur">
+        </datalist>
+        <input type="text" list="career-goals">
+        <label for="Hobby">Hobby</label>
+        <select name="hobby" id="">
+            <option value="Gaming">Gaming</option>
+            <option value="Running">Running</option>
+            <option value="Drawing">Drawing</option>
+            <option value="Coding">Coding</option>
+            <option value="Swimming">Swimming</option>
+        </select>
+        <label for="telephone">Telephone</label>
+        <input type="tel" name="" id="" placeholder="+62...">
+        <label for="birthday">Place & Date of Birth</label>
+        <input type="date" name="" id="">
+        <label for="file">Personal Photo</label>
+        <input type="file">
+        <label for="favorite-color">Favorite Color</label>
+        <input type="color">
+        <label for="github">Github Profile</label>
+        <input type="url" placeholder="https://github.com/...">
+        <div>
+            <input type="reset" name="" id="">
+            <input type="submit">
+        </div>
+    </form>
+</body>
+
+</html>
