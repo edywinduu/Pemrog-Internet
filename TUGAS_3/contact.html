@@ -1,123 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Describe Yourself</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+
     <style>
         body {
-            padding: 18px 24px;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: var(--text-main);
+            padding: 24px 20px 48px;
             display: flex;
             flex-direction: column;
-            gap: 24px;
-        }
-
-        body>a {
-            align-self: flex-start;
-        }
-
-        a {
-            font-size: 20px;
-            padding-bottom: 16px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            width: fit-content;
-            height: 100%;
-            padding: 8px 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
-            display: flex;
-            flex-direction: row;
             align-items: center;
-            gap: 16px;
-            text-decoration: none;
-            color: black;
+            min-height: 100vh;
+            gap: 20px;
         }
 
-        body>span {
-            font-size: 40px;
-            align-self: center;
-            font-weight: 600;
-        }
-
-        form {
-            display: inline-flex;
+        /* Section Container */
+        section.contact-section {
+            background-color: var(--card-bg);
+            border-radius: 18px;
+            width: 100%;
+            max-width: 100%;
+            padding: 32px 36px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            display: flex;
             flex-direction: column;
-            align-self: center;
-            padding: 2rem 4rem;
-            background-color: #ffffff;
-            border-radius: 12px;
-            height: 100%;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
-            gap: 16px;
-            text-decoration: none;
-            color: black;
+            align-items: stretch;
+            gap: 20px;
         }
 
-        label {
-            width: 30vh;
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .section-title i {
+            color: var(--primary);
             font-size: 20px;
         }
 
-        input[type="submit"] {
-            align-self: center;
+        /* Form Layout */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 20px;
+            width: 100%;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            width: 100%;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group input[type="tel"],
+        .form-group input[type="date"],
+        .form-group input[type="url"],
+        .form-group select {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--text-main);
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group input[type="password"]:focus,
+        .form-group input[type="tel"]:focus,
+        .form-group input[type="date"]:focus,
+        .form-group input[type="url"]:focus,
+        .form-group select:focus {
+            border-color: black;
+        }
+
+        .form-group input[type="file"] {
+            width: 100%;
+            padding: 8px 12px;
+            font-size: 13px;
+            font-family: inherit;
+            color: var(--text-muted);
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            outline: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-group input[type="file"]:hover {
+            border-color: black;
+        }
+
+        .form-group input[type="color"] {
+            width: 100%;
+            height: 42px;
+            padding: 4px;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            outline: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-group input[type="color"]:hover {
+            border-color: black;
+        }
+
+        /* Form Actions / Buttons */
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid #f1f5f9;
+            width: 100%;
+        }
+
+        .btn-submit {
+            background-color: #0f172a;
+            color: #ffffff;
+            border: 1px solid #0f172a;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background-color: black;
+            border-color: black;
+            transform: scale(1.03);
+        }
+
+        .btn-reset {
+            background-color: #ffffff;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-reset:hover {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            border-color: #cbd5e1;
+        }
+
+        @media (max-width: 680px) {
+            section.contact-section {
+                padding: 24px 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-actions {
+                flex-direction: column-reverse;
+            }
+
+            .btn-submit,
+            .btn-reset {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
-
 <body>
-    <a href="index.html">
-        <i class="fa fa-arrow-left" aria-hidden="true"></i>
-        <span>Back</span>
-    </a>
-    <span>Describe Yourself!</span>
-    <form action="">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="" placeholder="edy...">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="" placeholder="example@gmail.com">
-        <label for="passwd">Password</label>
-        <input type="password" name="passwd" id="" placeholder="***">
-        <label for="career-goals">Carrer Goals</label>
-        <datalist id="career-goals">
-        <option value="Software Engineer">
-        <option value="Data Scientist">
-        <option value="Network Architect">
-        <option value="Game Developer">
-        <option value="Cybersecurity Analyst">
-        <option value="Aerospace Engineer">
-        <option value="Doctor">
-        <option value="Graphic Designer">
-        <option value="Financial Analyst">
-        <option value="Entrepreneur">
-        </datalist>
-        <input type="text" list="career-goals">
-        <label for="Hobby">Hobby</label>
-        <select name="hobby" id="">
-            <option value="Gaming">Gaming</option>
-            <option value="Running">Running</option>
-            <option value="Drawing">Drawing</option>
-            <option value="Coding">Coding</option>
-            <option value="Swimming">Swimming</option>
-        </select>
-        <label for="telephone">Telephone</label>
-        <input type="tel" name="" id="" placeholder="+62...">
-        <label for="birthday">Place & Date of Birth</label>
-        <input type="date" name="" id="">
-        <label for="file">Personal Photo</label>
-        <input type="file">
-        <label for="favorite-color">Favorite Color</label>
-        <input type="color">
-        <label for="github">Github Profile</label>
-        <input type="url" placeholder="https://github.com/...">
-        <div>
-            <input type="reset" name="" id="">
-            <input type="submit">
-        </div>
-    </form>
-</body>
+    <div class="page-container">
+        <!-- Back Button -->
+        <a href="index.html" class="back-btn" title="Back to Home">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <span>Back to Home</span>
+        </a>
 
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h1 class="section-title">
+                <i class="fa fa-id-badge" aria-hidden="true"></i> Describe Yourself!
+            </h1>
+
+            <form action="" class="contact-form">
+                <div class="form-grid">
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="edy...">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="example@gmail.com">
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="passwd">Password</label>
+                        <input type="password" name="passwd" id="passwd" placeholder="***">
+                    </div>
+
+                    <!-- Telephone -->
+                    <div class="form-group">
+                        <label for="telephone">Telephone</label>
+                        <input type="tel" name="telephone" id="telephone" placeholder="+62...">
+                    </div>
+
+                    <!-- Career Goals -->
+                    <div class="form-group">
+                        <label for="career-goals-input">Career Goals</label>
+                        <input type="text" list="career-goals" id="career-goals-input" name="career_goals" placeholder="Select or type career goal...">
+                        <datalist id="career-goals">
+                            <option value="Software Engineer">
+                            <option value="Data Scientist">
+                            <option value="Network Architect">
+                            <option value="Game Developer">
+                            <option value="Cybersecurity Analyst">
+                            <option value="Aerospace Engineer">
+                            <option value="Doctor">
+                            <option value="Graphic Designer">
+                            <option value="Financial Analyst">
+                            <option value="Entrepreneur">
+                        </datalist>
+                    </div>
+
+                    <!-- Hobby -->
+                    <div class="form-group">
+                        <label for="hobby">Hobby</label>
+                        <select name="hobby" id="hobby">
+                            <option value="Gaming">Gaming</option>
+                            <option value="Running">Running</option>
+                            <option value="Drawing">Drawing</option>
+                            <option value="Coding">Coding</option>
+                            <option value="Swimming">Swimming</option>
+                        </select>
+                    </div>
+
+                    <!-- Place & Date of Birth -->
+                    <div class="form-group">
+                        <label for="birthday">Place & Date of Birth</label>
+                        <input type="date" name="birthday" id="birthday">
+                    </div>
+
+                    <!-- Github Profile -->
+                    <div class="form-group">
+                        <label for="github">Github Profile</label>
+                        <input type="url" name="github" id="github" placeholder="https://github.com/...">
+                    </div>
+
+                    <!-- Personal Photo -->
+                    <div class="form-group">
+                        <label for="file">Personal Photo</label>
+                        <input type="file" name="file" id="file">
+                    </div>
+
+                    <!-- Favorite Color -->
+                    <div class="form-group">
+                        <label for="favorite-color">Favorite Color</label>
+                        <input type="color" name="favorite_color" id="favorite-color" value="#2563eb">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <input type="reset" value="Reset" class="btn-reset">
+                    <input type="submit" value="Submit" class="btn-submit">
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
 </html>
